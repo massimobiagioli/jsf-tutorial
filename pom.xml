@@ -5,4 +5,7 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>tutorial-solution</name>
+  <modules>
+  	<module>getting-started-webapp</module>
+  </modules>
 </project>
