@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+</h:head>
+<h:body>
+	<h:form>
+		<h3>Nuovo contatto</h3>
+		<div>
+			<h:outputLabel>Nome:</h:outputLabel>
+			<h:inputText id="txtName" required="true" value="#{contactBean.name}"/>
+			<h:message for="txtName" />
+		</div>
+		<div>
+			<h:outputLabel>Cognome:</h:outputLabel>
+			<h:inputText id="txtSurname" required="true" value="#{contactBean.surname}"/>
+			<h:message for="txtSurname"/>
+		</div>
+		<div>
+			<h:outputLabel>Indirizzo:</h:outputLabel>
+			<h:inputText id="txtAddress" required="true" value="#{contactBean.address}"/>
+			<h:message for="txtAddress"/>
+		</div>
+		<div>
+			<h:outputLabel>Telefono:</h:outputLabel>
+			<h:inputText id="txtPhoneNumber" required="false" value="#{contactBean.phoneNumber}"/>
+			<h:message for="txtPhoneNumber"/>
+		</div>
+		<div>
+			<h:commandButton value="Ok" action="#{contactBean.save}"></h:commandButton>
+			<h:commandButton value="Annulla" immediate="true"></h:commandButton>
+		</div>
+	</h:form>
+</h:body>
+</html>
