@@ -1,5 +1,6 @@
 package it.massimobiagioli.tutorial.jsf.converters;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
@@ -14,10 +15,12 @@ public class PhoneNumberConverter implements Converter {
 	public Object getAsObject(FacesContext context, UIComponent component, String value) {
 		System.out.println("** Converter phoneNumber invoked - getAsObject - String value: " + value);
 		
-		if(value.length() < 5) {
-            throw new ConverterException("Converter Error - Wrong Phone Number");
+		if ((value.length() < 5) || (!value.contains("-"))) {
+			FacesMessage msg = new FacesMessage("Phone Convertion Failed", "Wrong phone number format");
+		    msg.setSeverity(FacesMessage.SEVERITY_ERROR);
+            throw new ConverterException(msg);
         }
-		
+				
 		PhoneNumber phoneNumber = new PhoneNumber();
 		phoneNumber.setPrefix(value.substring(0, 3));
 		phoneNumber.setNumber(value.substring(4));

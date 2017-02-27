@@ -23,7 +23,7 @@
 		</div>
 		<div>
 			<h:outputLabel>Telefono:</h:outputLabel>
-			<h:inputText id="txtPhoneNumber" required="false" value="#{contactBean.phoneNumber}" converter="phoneNumber"/>
+			<h:inputText id="txtPhoneNumber" required="false" value="#{contactBean.phoneNumber}" converter="phoneNumber" validator="phoneNumberValidator" />
 			<h:message for="txtPhoneNumber"/>
 		</div>
 		<div>

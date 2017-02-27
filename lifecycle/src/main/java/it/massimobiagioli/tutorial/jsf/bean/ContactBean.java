@@ -19,6 +19,7 @@ public class ContactBean {
 	}
 	
 	public String save() {
+		System.out.println("*** Action save invoked");
 		StringBuilder sb = new StringBuilder();
 		sb.append("Nome: ")
 			.append(this.getName())
